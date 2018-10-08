@@ -3,6 +3,8 @@ LABEL maintainer="apocoder@gmail.com"
 
 # Prep Jenkins Directories
 USER root
+RUN apt-get update && apt-get install python-pip
+RUN pip install awscli
 RUN mkdir /var/log/jenkins
 RUN mkdir /var/cache/jenkins
 RUN chown -R jenkins:jenkins /var/log/jenkins
