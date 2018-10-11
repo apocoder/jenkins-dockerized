@@ -15,7 +15,7 @@ RUN apt-get update \
 
 
 
-        - echo Installing Go...
+        RUN echo Installing Go...
         RUN wget -nv https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
         RUN tar fxz go1.10.3.linux-amd64.tar.gz
         RUN mv go /usr/local
