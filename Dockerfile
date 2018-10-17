@@ -14,17 +14,6 @@ RUN apt-get update \
         software-properties-common
 
 
-
-        RUN echo Installing Go...
-        RUN wget -nv https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
-        RUN tar fxz go1.10.3.linux-amd64.tar.gz
-        RUN mv go /usr/local
-        RUN export PATH=${GOPATH}/bin:"$GOROOT"/bin:${PATH}
-        RUN mkdir -p /usr/local/go/bin
-        RUN export GOBIN=/usr/local/go/bin
-        RUN export GOPATH=/usr/local/go
-
-
 # docker repo
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - \
     && echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" >> /etc/apt/sources.list.d/additional-repositories.list \
