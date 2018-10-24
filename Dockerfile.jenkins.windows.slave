@@ -6,9 +6,9 @@ RUN (New-Object System.Net.WebClient).DownloadFile('{0}/jnlpJars/slave.jar' -f $
 ENTRYPOINT ["C:\\Java\\jre1.8.0_91\\bin\\java.exe", "-jar", ".\\slave.jar"]
 
 # Build like this:
-# PS C:\alex\jenkins-slave> docker build --build-arg BASE_URL=http://192.168.0.35:8080 -t jenkins_windows_agent .
+# PS C:\alex\jenkins-slave> docker build --build-arg BASE_URL=http://172.71.20.217:8080 -t jenkins_windows_agent .
 
 # Run it like this:
-# PS C:\alex\jenkins-slave> docker run -ti jenkins_windows_agent -jnlpUrl http://192.168.0.35:8080/computer/Windows/slave-agent.jnlp -secret fb64083959199be43ba2cec980ec330e2d419e8905d15691f5cda63f0978a550
-
+# PS C:\alex\jenkins-slave> docker run -ti jenkins_windows_agent -jnlpUrl http://172.71.20.217:8080/computer/Windows/slave-agent.jnlp -secret fb64083959199be43ba2cec980ec330e2d419e8905d15691f5cda63f0978a550
+#docker run jenkins_windows_agent -url http://172.71.20.217:8080 fb64083959199be43ba2cec980ec330e2d419e8905d15691f5cda63f0978a550 docker-windows
 # Base image @ https://gist.github.com/alexellis/bb37985f52c1b0a1746dda20f0de1c18
