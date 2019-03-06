@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:latest
+FROM jenkins/jenkins:2.150
 LABEL maintainer="apocoder@gmail.com"
 
 # Prep Jenkins Directories
