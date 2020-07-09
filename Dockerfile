@@ -31,6 +31,14 @@ RUN apt-get update \
         apt-get update && \
         apt-get -y install docker-ce
 
+        RUN set -x; \
+      		echo "deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" > /etc/apt/sources.list.d/pgdg.list \
+      		&& curl -sSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
+      		&& apt-get update \
+      		&& apt-get install -y postgresql-client-10
+
+RUN psql --version
+
 # Using Ubuntu
 RUN curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 RUN apt-get install -y nodejs
