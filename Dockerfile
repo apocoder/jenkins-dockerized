@@ -35,7 +35,7 @@ RUN apt-get update \
       		echo "deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" > /etc/apt/sources.list.d/pgdg.list \
       		&& curl -sSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
       		&& apt-get update \
-      		&& apt-get install -y postgresql-client-10
+      		&& apt-get install -y postgresql-client-12
 
 RUN psql --version
 
